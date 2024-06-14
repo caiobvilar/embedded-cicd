@@ -1,0 +1,54 @@
+Modified McCabe Cyclomatic Complexity
+|   Traditional McCabe Cyclomatic Complexity
+|       |    # Statements in function
+|       |        |   First line of function
+|       |        |       |   # lines in function
+|       |        |       |       |  filename(definition line number):function
+|       |        |       |       |           |
+1	1	1	3	7	dio_stm32.cpp(7): dio_stm32::write
+1	1	1	11	3	dio_stm32.cpp(11): dio_stm32::read
+1	1	1	4	7	i2c_stm32.cpp(4): i2c_stm32::register_write
+1	1	3	7	1	led.cpp(7): Led::Led
+1	1	3	9	1	led.cpp(9): Led::Led
+1	1	2	11	4	led.cpp(11): Led::on
+1	1	2	16	4	led.cpp(16): Led::off
+2	2	5	21	10	led.cpp(21): Led::toggle
+1	1	1	32	1	led.cpp(32): Led::getState
+1	1	2	54	1	led.hpp(54): LedBlue::LedBlue
+1	1	1	61	3	led.hpp(61): setBrightness
+1	1	10	9	17	led_expander.cpp(9): led_expander::led_expander
+1	1	3	27	6	led_expander.cpp(27): led_expander::on
+1	1	3	34	6	led_expander.cpp(34): led_expander::off
+2	2	3	41	7	led_expander.cpp(41): led_expander::toggle
+1	1	4	3	4	led_io.cpp(3): led_io::led_io
+1	1	1	8	1	led_io.cpp(8): led_io::on
+1	1	1	10	1	led_io.cpp(10): led_io::off
+3	3	4	12	6	led_io.cpp(12): led_io::toggle
+1	1	5	10	7	led_pwm.cpp(10): led_pwm::led_pwm
+1	1	2	18	4	led_pwm.cpp(18): led_pwm::on
+1	1	2	23	4	led_pwm.cpp(23): led_pwm::off
+2	2	3	28	7	led_pwm.cpp(28): led_pwm::toggle
+1	1	2	36	4	led_pwm.cpp(36): led_pwm::setBrightness
+1	1	1	41	1	led_pwm.cpp(41): led_pwm::getBrightness
+1	1	1	32	1	main_cpp.cpp(32): anonymous_namespace::led_toggler
+1	1	1	34	2	main_cpp.cpp(35): anonymous_namespace::led_stoggler
+2	2	2	40	4	main_cpp.cpp(41): template_functions::min
+1	1	1	45	4	main_cpp.cpp(46): template_functions::add
+2	2	3	50	6	main_cpp.cpp(51): template_functions::max
+6	6	28	58	59	main_cpp.cpp(58): main_cpp
+1	1	7	10	9	pwm_stm32.cpp(10): pwm_stm32::pwm_stm32
+1	1	4	20	6	pwm_stm32.cpp(20): pwm_stm32::setDutyCycle
+1	1	1	20	1	relay_base.hpp(20): relay_base::getState
+1	1	4	3	4	relay_io.cpp(3): relay_io::relay_io
+1	1	2	8	4	relay_io.cpp(8): relay_io::close
+1	1	2	13	4	relay_io.cpp(13): relay_io::open
+2	2	7	13	13	syscalls.c(13): _sbrk
+1	1	1	27	3	syscalls.c(27): _close
+1	1	1	31	5	syscalls.c(31): _fstat
+1	1	1	37	3	syscalls.c(37): _isatty
+1	1	1	41	3	syscalls.c(41): _lseek
+2	2	4	45	5	syscalls.c(45): _exit
+1	1	1	51	3	syscalls.c(51): _kill
+1	1	1	55	3	syscalls.c(55): _getpid
+1	1	2	59	5	syscalls.c(59): _write
+3	3	8	65	13	syscalls.c(65): _read

@@ -29,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: Dockerfile
+          file: controller.Dockerfile
           tags: caio_guimaraes/cicd-dev:latest 
           outputs: type=docker,dest=/tmp/docker/${{ runner.os }}-image.tar

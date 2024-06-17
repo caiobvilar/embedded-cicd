@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Set the maintainer label
-LABEL maintainer="jacob@beningo.com"
+LABEL maintainer="caio.b.vilar@gmail.com"
 
 # Set environment variables to non-interactive (this will prevent some prompts)
 ENV DEBIAN_FRONTEND=non-interactive

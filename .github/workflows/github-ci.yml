@@ -28,7 +28,33 @@ jobs:
         if: steps.cache-docker.outputs.cache-hit != 'true'
         uses: docker/build-push-action@v4
         with:
-          context: .
-          file: controller.Dockerfile
+          context: . #Base path for where the dockerfile file is
+          file: controller.Dockerfile # Dockerfile filename!
           tags: caio_guimaraes/cicd-dev:latest 
           outputs: type=docker,dest=/tmp/docker/${{ runner.os }}-image.tar
+  analysis:
+    runs-on: ubuntu-latest
+    needs: docker_build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      -
+        name: Restore Docker Image
+        id: cache-docker
+        uses: actions/cache@v4
+        with:
+          path: /tmp/docker
+          key: ${{ runner.os }}-docker-${{ hashFiles('controller.Dockerfile') }}
+      -
+        name: Load Image
+        run: |
+          docker run \
+          --rm \
+          --platform linux/amd64 \
+          --workdir /home/app \
+          -v ${{ github.workspace }}:/home/app \
+          caio_guimaraes/cicd-dev:latest \
+          /bin/bash -c "make release -j8"
+
+
+
